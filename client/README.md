@@ -1,3 +1,30 @@
+#RecipEase
+
+##Table of Contents
+
+- [User-Story](#user-story)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributions](#contributions)
+- [Tests](#tests)
+- [License](#license)
+- [Questions](#questions)
+
+---
+
+## User-Story
+
+//complete
+
+## Description
+
+//complete
+
+## Installation
+
+//complete
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +95,28 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Usage
+
+To provide a one stop shop for all your cooking needs including shopping list generator, recipie finder(using 3rd party api), recipie creator and " updater ", all save by the individuals account"
+
+## Contributions
+
+Agent-Shields, LippoHippo, Kyler-Mclachlan, and austinslatey.
+
+## Tests
+
+//complete
+
+## License
+
+MIT
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+## Questions
+
+If any questions arise..
+
+Visit my Github at: [https://github.com/austinslatey](https://github.com/austinslatey)
+
+Reach out to me by email: austinslater58@gmail.com
