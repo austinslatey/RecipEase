@@ -8,10 +8,25 @@ const recipeSchema = new Schema({
       required: true,
       trim: true
     },
+    instructions: [
+      {
+      type : String,
+      required: true,
+      }
+    ],
+    tags: [{
+      type: String
+      }
+    ],
+    servings: {
+      type: String
+    },
+    time: {
+      type: Number 
+    },      
     ingredients: [
         {
-          type: Schema.Types.ObjectId,
-          ref: 'Ingredient'
+          type: String
         }
       ]
     });
