@@ -1,53 +1,40 @@
-// const { gql } = require('apollo-server-express');
+const { gql } = require('apollo-server-express');
 
-// const typeDefs = gql`
-//   type Category {
-//     _id: ID
-//     name: String
-//   }
+const typeDefs = gql`
+  type Recipe {
+    _id: ID
+    instructions: [String]
+    tags: [String]
+    servings: String
+    time: String
+    name: String
+    ingredients: [String]
+  }
 
-//   type Ingredient {
-//     _id: ID
-//     name: String
-//     quantity: Int
-//     price: Float
-//     category: Category
-//   }
+  type User {
+    _id: ID
+    userName: String
+    email: String
+    recipes: [Recipe]
+  }
 
-//   type Recipe {
-//     _id: ID
-//     name: String
-//     ingredients: [Ingredient]
-//   }
+  type GroceryList {
+    recipe: [Recipe]
+  }
 
-//   type User {
-//     _id: ID
-//     firstName: String
-//     lastName: String
-//     email: String
-//     recipes: [Recipe]
-//   }
+  type Query {
+    user: User
+    recipes(_id: ID!): Recipe
+    groceryList: GroceryList  
+  }
 
-//   type Auth {
-//     token: ID
-//     user: User
-//   }
+  type Mutation {
+    addUser(userName: String!, email: String!, password: String!): User
+    addRecipe(name: String!, instructions: String!, tags: String, servings: String, time: String, ingredients: String) : Recipe
+    updateUser(userName: String, email: String, password: String): User
+    updateRecipe(_id: ID!, instructions: String!, tags: String, servings: String, time: String, ingredients: String!): Recipe
+    login(email: String!, password: String!): User
+  }
+`;
 
-//   type Query {
-//     categories: [Category]
-//     ingredients(category: ID, name: String): [Ingredient]
-//     ingredients(_id: ID!): Ingredient
-//     user: User
-//     recipes(_id: ID!): Recipe
-//   }
-
-//   type Mutation {
-//     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-//     addRecipe(ingredients: [ID]!): Recipe
-//     updateUser(firstName: String, lastName: String, email: String, password: String): User
-//     updateRecipe(_id: ID!, quantity: Int!): Recipe
-//     login(email: String!, password: String!): Auth
-//   }
-// `;
-
-// module.exports = typeDefs;
+module.exports = typeDefs;

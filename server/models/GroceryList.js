@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const GroceryListSchema = new Schema({
-  Recipe: [
+  recipe: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Recipe'
@@ -13,4 +13,4 @@ const GroceryListSchema = new Schema({
 
 const GroceryList = mongoose.model('GroceryList', GroceryList);
 
-module.exports = Order;
+module.exports = GroceryList;

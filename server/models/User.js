@@ -1,14 +1,9 @@
 const mongoose = require('mongoose');
-const Recipe = require('./Recipe');
+
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-    firstName: {
-      type: String,
-      required: true,
-      trim: true
-    },
-    lastName: {
+    userName: {
       type: String,
       required: true,
       trim: true
@@ -23,7 +18,7 @@ const userSchema = new Schema({
       required: true,
       minlength: 5
     },
-    Recipes: [
+    recipes: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Recipe'
