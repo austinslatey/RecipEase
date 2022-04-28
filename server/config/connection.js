@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const uri = SECRET_URI
+const path = require('path')
+require('dotenv').config();
+const uri = "mongodb+srv://test:kylercole@cluster0.q5hmm.mongodb.net/test"
 
 mongoose.connect(uri|| 'mongodb://localhost/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
 });
 
 module.exports = mongoose.connection;
