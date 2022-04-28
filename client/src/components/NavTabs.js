@@ -1,18 +1,17 @@
 import { Button } from '@mui/material';
 import React, { useState } from 'react';
-// import { link } from 'react-router-dom';
 
 
 
 
 function NavTabs({ currentPage, handlePageChange }) {
-  const [click, setClick] = useState(false);
+  // const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
 
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-  
+  // const handleClick = () => setClick(!click);
+  // const closeMobileMenu = () => setClick(false);
+
   const showButton = () => {
     if(window.innerWidth <= 960) {
       setButton(false);
@@ -26,7 +25,7 @@ function NavTabs({ currentPage, handlePageChange }) {
   return (
     <div>
     <ul className="nav nav-tabs">
-      <li className="nav-item">
+      <li className="nav-links">
         <a
           href="#homepage"
           onClick={() => handlePageChange('Homepage')}
@@ -35,7 +34,7 @@ function NavTabs({ currentPage, handlePageChange }) {
           Homepage
         </a>
       </li>
-      <li className="nav-item">
+      <li className="nav-links">
         <a
           href="#dashboard"
           onClick={() => handlePageChange('DashBoard')}
@@ -44,7 +43,7 @@ function NavTabs({ currentPage, handlePageChange }) {
           DashBoard
         </a>
       </li>
-      <li className="nav-item">
+      <li className="nav-links">
         <a
           href="#Recipies"
           onClick={() => handlePageChange('Recipies')}
@@ -53,7 +52,7 @@ function NavTabs({ currentPage, handlePageChange }) {
           Recipies
         </a>
       </li>
-      <li className="nav-item">
+      <li className="nav-links">
         <a
           href="#grocerylist"
           //  TODO: Add a comment explaining what this logic is doing
@@ -64,7 +63,7 @@ function NavTabs({ currentPage, handlePageChange }) {
           Grocery List
         </a>
       </li>
-      <li className="nav-item">
+      <li className="nav-links">
         <a
           href="#Login"
           onClick={() => handlePageChange('Login')}
@@ -73,7 +72,7 @@ function NavTabs({ currentPage, handlePageChange }) {
           Login
         </a>
       </li>
-      <li className="nav-item">
+      <li className="nav-links">
         <a
           href="#SignUp"
           onClick={() => handlePageChange('SignUp')}
