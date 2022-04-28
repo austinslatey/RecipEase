@@ -6,6 +6,7 @@
   - [Table of Contents](#table-of-contents)
   - [User-Story](#user-story)
   - [Description](#description)
+  - [Tests](#tests)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Contributions](#contributions)
@@ -34,6 +35,9 @@
 
 //complete
 
+## Tests
+
+//complete
 ## Installation
 
     //complete
