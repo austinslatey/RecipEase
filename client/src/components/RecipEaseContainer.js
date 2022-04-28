@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Recipies from "./pages/Recipies";
 import GroceryList from "./pages/GroceryList";
 import Login from "./pages/Login";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -12,7 +13,7 @@ import Login from "./pages/Login";
 
 
 
-export default function PortfolioContainer() {
+export default function RecipEaseContainer() {
   const [currentPage, setCurrentPage] = useState("Home");
 
   //checking each condition to see what page we are on , then rendering that page, otherwise rendering the contact form

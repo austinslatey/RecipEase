@@ -46,7 +46,7 @@ function NavTabs({ currentPage, handlePageChange }) {
       <li className="nav-item">
         <a
           href="#Login"
-          onClick={() => handlePageChange('Login')}
+          onClick={() => handlePageChange('login')}
           className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
         >
           Login
