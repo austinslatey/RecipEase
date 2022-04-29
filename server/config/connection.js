@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const uri = SECRET_URI
 
-mongoose.connect(uri|| 'mongodb://localhost/', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/RecipEase',
+  {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+  }
+);
 
 module.exports = mongoose.connection;
