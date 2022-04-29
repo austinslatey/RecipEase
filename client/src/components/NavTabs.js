@@ -1,7 +1,7 @@
-// import { Button } from '@mui/material';
+import { Button } from '@mui/material';
 import React, { useState } from 'react';
 import './NavTabs.css';
-import { Button } from './Button';
+
 
 
 
@@ -25,8 +25,9 @@ function NavTabs({ currentPage, handlePageChange }) {
 
   window.addEventListener('resize', showButton);
   return (
-    <nav>
+    
     <div>
+      <nav>
     <ul className="nav nav-tabs">
       <li className="nav-links">
         <a
@@ -76,6 +77,7 @@ function NavTabs({ currentPage, handlePageChange }) {
         </a>
       </li>
       <li className="nav-links">
+
         <a
           href="#SignUp"
           onClick={() => handlePageChange('SignUp')}
@@ -86,8 +88,8 @@ function NavTabs({ currentPage, handlePageChange }) {
       </li>
     </ul>
     {button && <Button buttonStyle='btn--outine'>SIGN UP</Button>}
+    </nav>
   </div>
-  </nav>
   );
 }
 
