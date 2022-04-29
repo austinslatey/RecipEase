@@ -9,7 +9,10 @@ const resolvers = {
         },
         recipe: async (parent, { _id }) => {
             return await Recipe.findById(_id);
-          },
+        },
+        groceryList: async (parent, { _id }) => {
+            return await GroceryList.findById(_id);
+        },
     },
     Mutation: {
         addUser: async (parent, args) => {
