@@ -5,9 +5,9 @@ const { User, Recipe, GroceryList} = require('../models');
 const resolvers = {
     Query: {
         user: async (parent, args) => {
-            return await User.find();
+            return await User.findOne();
         },
-        recipe: async (parent, { _id }) => {
+        recipes: async (parent, { _id }) => {
             return await Recipe.findById(_id);
         },
         groceryList: async (parent, { _id }) => {
@@ -24,11 +24,8 @@ const resolvers = {
             return recipe;
         },
         updateUser: async (parent, args) => {
-            return await User.findByIdAndUpdate(user._id, args, { new: true });
+            return await User.findByIdAndUpdate({_id:args._id}, {userName:args.userName}, { new: true });
         },
-        updateRecipe: async (parent, args) => {
-            return await Recipe.findByIdAndUpdate(recipe._id, args, { new: true });
-        }
     }
 }
 
