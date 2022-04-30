@@ -6,6 +6,7 @@ import Recipies from "./pages/Recipies";
 import GroceryList from "./pages/GroceryList";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import Footer from "./Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -45,6 +46,7 @@ export default function RecipEaseContainer() {
       {/* the handlepage function is what were using as prop */}
       <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
       {renderPage()}
+      <Footer />
       </div>
     </div>
   );
