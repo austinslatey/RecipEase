@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const path = require('path')
-require('dotenv').config();
 
-
-mongoose.connect(uri|| 'mongodb://localhost/', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/RecipEase',
+  {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true,
+  }
+);
 
 module.exports = mongoose.connection;
