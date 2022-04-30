@@ -11,6 +11,6 @@ const GroceryListSchema = new Schema({
   ]
 });
 
-const GroceryList = mongoose.model('GroceryList', GroceryList);
+const GroceryList = mongoose.model('GroceryList', GroceryListSchema);
 
 module.exports = GroceryList;
