@@ -5,8 +5,27 @@ const { User, Recipe, GroceryList} = require('../models');
 const resolvers = {
     Query: {
         user: async (parent, args) => {
-            return await User.find();
-        }
+            return await User.findOne();
+        },
+        recipes: async (parent, { _id }) => {
+            return await Recipe.findById(_id);
+        },
+        groceryList: async (parent, { _id }) => {
+            return await GroceryList.findById(_id);
+        },
+    },
+    Mutation: {
+        addUser: async (parent, args) => {
+          const user = await User.create(args);
+          return user ;
+        },
+        addRecipe: async (parent, args) => {
+            const recipe = await Recipe.create(args);
+            return recipe;
+        },
+        updateUser: async (parent, args) => {
+            return await User.findByIdAndUpdate({_id:args._id}, {userName:args.userName}, { new: true });
+        },
     }
 }
 
