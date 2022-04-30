@@ -10,6 +10,9 @@
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   },
+  "engines":{
+    "node": "16.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/austinslatey/RecipEase.git"
