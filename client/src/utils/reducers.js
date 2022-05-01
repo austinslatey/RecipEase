@@ -13,6 +13,11 @@ export const reducer = (state, action) => {
         ...state,
         Recipe: [...action.recipes],
       };
+    case ADD_TO_GROCERY_LIST:
+      return {
+        ...state,
+        GroceryList: [...action.recipe],
+      };  
       default:
         return state;
   }

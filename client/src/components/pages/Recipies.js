@@ -2,18 +2,16 @@ import React,{useState} from "react";
 import { Grid } from '@mui/material';
 import { Box } from '@mui/material';
 import { Button } from '@mui/material';
-import './style.css';
 import { lightBlue } from "@mui/material/colors";
 import { color } from "@mui/system";
 import { useMutation } from "@apollo/client";
-import { ADD_TO_RECIPE } from '../../utils/mutations';
+import { ADD_TO_RECIPE, ADD_TO_GROCERY_LIST } from '../../utils/mutations';
 
 
 // recipes 
 export default function Recipies() {
-  const [formState, setFormState] = useState({name:"",instructions:[],tags:[""],servings:"",time:"",ingredients:[]})
-  const [addRecipe, {error}] = useMutation(ADD_TO_RECIPE)
-
+  const [formState, setFormState] = useState({name:"",instructions:[],tags:[""],servings:"",time:"",ingredients:[], Recipies:[]})
+  const [addRecipe, addGroceryList, {error}] = useMutation(ADD_TO_RECIPE, ADD_TO_GROCERY_LIST)
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState)
@@ -33,6 +31,35 @@ export default function Recipies() {
     }
   };
 
+  const handleFormSubmitAddToGroceryList = async (event) => {
+    event.preventDefault();
+    console.log(formState)
+    try{
+      for (let i=0; i<formState.Recipies.length; i++){
+      const mutationResponseAddtoGroceryList = await addGroceryList({
+        variables: { 
+          Recipies: formState.Recipies, 
+          }
+      });
+    }}
+    catch{
+      console.log(error)
+    }
+  };
+
+  const handleFormSubmitGroceryList = async (event) =>{
+    event.preventDefault();
+    const nextRecipes= document.querySelector("#Recipes").value.trim()
+    if (nextRecipes === ""){
+      return
+    }
+    setFormState({
+      ...formState,
+      Recipies: [...formState.Recipies, nextRecipes]
+    })
+    document.querySelector("#Recipes").value="";
+  }
+
   const handleFormSubmitInstructions = async (event) =>{
     event.preventDefault();
     const nextInstruction = document.querySelector("#instructions").value.trim()
@@ -44,6 +71,19 @@ export default function Recipies() {
       instructions: [...formState.instructions, nextInstruction]
     })
     document.querySelector("#instructions").value="";
+  }
+
+  const handleFormSubmitIngredient = async (event) =>{
+    event.preventDefault();
+    const nextIngredient = document.querySelector("#ingredient").value.trim()
+    if (nextIngredient === ""){
+      return
+    }
+    setFormState({
+      ...formState,
+      ingredients: [...formState.ingredients, nextIngredient]
+    })
+    document.querySelector("#ingredient").value="";
   }
 
   const onChange=(event) =>{
@@ -90,7 +130,7 @@ export default function Recipies() {
           }}>
           <h4>Add Ingredient</h4>
         <textarea id='ingredient'></textarea>
-        <Button color="primary" variant="contained" hfre="#add-ingredient" style={{
+        <Button onClick={handleFormSubmitIngredient} color="primary" variant="contained" hfre="#add-ingredient" style={{
                 position: 'relative',
                 right: 120,
                 top: 25,
@@ -145,6 +185,22 @@ export default function Recipies() {
                 bottom: 150,
                 left: 100
           }} >Save Recipie</Button>
+          <div style={{
+                position: 'relative',
+                bottom: 170,
+                right: 75
+          }}>
+          <h4> Time to Cook</h4>
+        <textarea onChange={onChange} id='Recipes' style={{
+                borderRadius: 25
+          }}></textarea><Button onClick={handleFormSubmitAddToGroceryList} color="primary" variant="contained" hfre="#add-ingredient" style={{
+            position: 'relative',
+            height: 55,
+            width: 175,
+            bottom: 150,
+            left: 100
+      }} >Add Recipie To GroceryList</Button>
+        </div>
           </div>
       </Grid> 
     </Box>

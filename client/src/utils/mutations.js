@@ -16,6 +16,15 @@ export const ADD_TO_RECIPE = gql`
   }
 `;
 
+export const ADD_TO_GROCERY_LIST = gql`
+  mutation addRecipetoGroceryList($name: String! {
+    addRecipetoGroceryList(name: $name){
+        _id
+        name
+        }
+  }
+`;
+
 export const LOGIN = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
