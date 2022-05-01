@@ -41,7 +41,7 @@ export default function RecipEaseContainer() {
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div style={c2Style}>
+     <div >
       <div>
       {/* the handlepage function is what were using as prop */}
       <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
@@ -52,9 +52,10 @@ export default function RecipEaseContainer() {
   );
 }
 
-const c2Style = {
-  background: 'steelblue',
-  color: 'white',
-  padding: '2.0rem',
-  text: 'black'
-}
+//style={c2Style}
+// const c2Style = {
+//   background: 'steelblue',
+//   color: 'white',
+//   padding: '2.0rem',
+//   text: 'black'
+// }
