@@ -16,16 +16,35 @@ export default function Recipies() {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(formState)
+    try{
       const mutationResponse = await addRecipe({
-        variables: { name: formState.name, 
+        variables: { 
+          name: formState.name, 
           instructions: formState.instructions, 
           tags: formState.tags, 
           servings: formState.servings, 
           time: formState.time, 
           ingredients: formState.ingredients }
       });
-      mutationResponse();
+    }
+    catch{
+      console.log(error)
+    }
   };
+
+  const handleFormSubmitInstructions = async (event) =>{
+    event.preventDefault();
+    const nextInstruction = document.querySelector("#instructions").value.trim()
+    if (nextInstruction === ""){
+      return
+    }
+    setFormState({
+      ...formState,
+      instructions: [...formState.instructions, nextInstruction]
+    })
+    document.querySelector("#instructions").value="";
+  }
 
   const onChange=(event) =>{
     // console.log(event.target)
@@ -84,10 +103,19 @@ export default function Recipies() {
                 backgroundColor: lightBlue
           }}>
           <h4> Instructions</h4>
-        <textarea onChange={onChange} id='instructions' style={{
-                  width: 300,
-                  height: 300
-          }}></textarea>
+          <form id='instructions-test'>
+            <textarea id='instructions' style={{
+                    width: 300,
+                    height: 300
+            }}></textarea>
+            <Button onClick={handleFormSubmitInstructions} color="primary" variant="contained" hfre="#add-ingredient" style={{
+                position: 'relative',
+                height: 55,
+                width: 175,
+                bottom: 150,
+                left: 100
+          }} >Add Instructions</Button>
+          </form>
         </div>
         <div style={{
                 position: 'relative',
