@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
+//schema 
 const recipeSchema = new Schema({
     recipeName: {
       type: String,
