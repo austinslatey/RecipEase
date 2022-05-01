@@ -4,13 +4,19 @@ const { User, Recipe, GroceryList} = require('../models');
 
 const resolvers = {
     Query: {
-        user: async (parent, args) => {
+        getOneUser: async (parent, args) => {
             return await User.findOne();
         },
-        recipes: async (parent, { _id }) => {
+        getAllUsers: async (parent) => {
+            return await User.find();
+        },
+        getUserRecipes: async (parent, { _id }) => {
             return await Recipe.findById(_id);
         },
-        groceryList: async (parent, { _id }) => {
+        getAllRecipes: async(parent) => {
+            return await Recipe.find()
+        },
+        getUserGroceryList: async (parent, { _id }) => {
             return await GroceryList.findById(_id);
         },
     },
@@ -27,7 +33,7 @@ const resolvers = {
         },
         updateUser: async (parent, args) => {
             return await User.findByIdAndUpdate({_id:args._id}, {userName:args.userName}, { new: true });
-        },
+        }
     }
 }
 
