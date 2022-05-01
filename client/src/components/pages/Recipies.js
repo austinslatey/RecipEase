@@ -2,7 +2,6 @@ import React,{useState} from "react";
 import { Grid } from '@mui/material';
 import { Box } from '@mui/material';
 import { Button } from '@mui/material';
-import './style.css';
 import { lightBlue } from "@mui/material/colors";
 import { color } from "@mui/system";
 import { useMutation } from "@apollo/client";
@@ -52,7 +51,7 @@ export default function Recipies() {
     const { id, value } = event.target;
     // console.log({id})
     // console.log({value})
-    console.log(formState)
+    console.log(formState.name);
       setFormState({
         ...formState,
         [id]: value

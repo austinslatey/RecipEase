@@ -7,8 +7,12 @@ const resolvers = {
         user: async (parent, args) => {
             return await User.findOne();
         },
-        recipes: async (parent, { _id }) => {
+        recipe: async (parent, { _id }) => {
             return await Recipe.findById(_id);
+        },
+
+        recipes: async (parent, args) => {
+            return await Recipe.find();
         },
         groceryList: async (parent, { _id }) => {
             return await GroceryList.findById(_id);

@@ -24,7 +24,8 @@ const typeDefs = gql`
 
   type Query {
     user: User
-    recipes(_id: ID!): Recipe
+    recipe(_id: ID!): Recipe
+    recipes:[Recipe]
     groceryList: GroceryList  
   }
 
