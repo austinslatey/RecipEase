@@ -11,7 +11,8 @@ import { ADD_TO_RECIPE, ADD_TO_GROCERY_LIST } from '../../utils/mutations';
 // recipes 
 export default function Recipies() {
   const [formState, setFormState] = useState({name:"",instructions:[],tags:[""],servings:"",time:"",ingredients:[], Recipies:[]})
-  const [addRecipe, addGroceryList, {error}] = useMutation(ADD_TO_RECIPE, ADD_TO_GROCERY_LIST)
+  const [addRecipe, {error}] = useMutation(ADD_TO_RECIPE)
+  const [ addGroceryList, {error_two}] = useMutation(ADD_TO_GROCERY_LIST)
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState)
@@ -108,7 +109,7 @@ export default function Recipies() {
             alignItems: 'center',
           }}>
       <Grid >
-        <h1>Add A Recipie</h1>
+        <h1>Add A Recipe</h1>
         <div style={{
                 position: 'relative',
                 top: 5,
@@ -193,13 +194,13 @@ export default function Recipies() {
           <h4> Time to Cook</h4>
         <textarea onChange={onChange} id='Recipes' style={{
                 borderRadius: 25
-          }}></textarea><Button onClick={handleFormSubmitAddToGroceryList} color="primary" variant="contained" hfre="#add-ingredient" style={{
+          }}></textarea><Button onClick={handleFormSubmitAddToGroceryList} color="primary" variant="contained" style={{
             position: 'relative',
             height: 55,
             width: 175,
             bottom: 150,
             left: 100
-      }} >Add Recipie To GroceryList</Button>
+      }} >Add Recipe To GroceryList</Button>
         </div>
           </div>
       </Grid> 

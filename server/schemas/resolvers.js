@@ -25,7 +25,7 @@ const resolvers = {
             const recipe = await Recipe.create(args);
             return recipe;
         },
-        addGroceryList: async (parent, args) => {
+        addRecipetoGroceryList: async (parent, args) => {
             console.log('test');
             console.log(args);
             const groceryList = await GroceryList.create(args);

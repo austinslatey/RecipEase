@@ -17,10 +17,9 @@ export const ADD_TO_RECIPE = gql`
 `;
 
 export const ADD_TO_GROCERY_LIST = gql`
-  mutation addRecipetoGroceryList($name: String! {
-    addRecipetoGroceryList(name: $name){
-        _id
-        name
+  mutation addRecipetoGroceryList($_id: ID!) {
+    addRecipetoGroceryList(_id: $_id){
+      recipe
         }
   }
 `;
