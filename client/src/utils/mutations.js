@@ -1,5 +1,7 @@
 import { gql } from '@apollo/client';
 
+
+// mutations
 export const ADD_TO_RECIPE = gql`
   mutation addRecipe($name: String!, $instructions: [String]!, $tags: [String], $servings: String, $time: String, $ingredients: [String]) {
     addRecipe(name: $name, instructions: $instructions, tags: $tags, servings: $servings, time: $time, ingredients: $ingredients){

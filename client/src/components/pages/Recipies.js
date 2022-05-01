@@ -9,7 +9,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_TO_RECIPE } from '../../utils/mutations';
 
 
-
+// recipes 
 export default function Recipies() {
   const [formState, setFormState] = useState({name:"",instructions:[],tags:[""],servings:"",time:"",ingredients:[]})
   const [addRecipe, {error}] = useMutation(ADD_TO_RECIPE)
