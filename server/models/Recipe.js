@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 //schema 
 const recipeSchema = new Schema({
-    recipeName: {
+    name: {
       type: String,
       required: true,
       trim: true
@@ -31,8 +31,5 @@ const recipeSchema = new Schema({
         }
       ]
     });
-
-
 const Recipe = mongoose.model('Recipe', recipeSchema);
-
 module.exports = Recipe;

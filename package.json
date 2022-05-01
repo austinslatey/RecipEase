@@ -10,7 +10,7 @@
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
   },
-  "engines":{
+  "engines": {
     "node": "16.x"
   },
   "repository": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/austinslatey/RecipEase#readme",
   "dependencies": {
+    "apollo-server-express": "^3.6.7",
     "concurrently": "^7.1.0"
   }
 }
