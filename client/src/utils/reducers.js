@@ -10,20 +10,8 @@ export const reducer = (state, action) => {
     case ADD_TO_RECIPE:
       return {
         ...state,
-        Recipe: [...action.ingredients],
+        Recipe: [...action.recipes],
       };
-
-    case ADD_TO_GROCERY_LIST:
-      return {
-        ...state,
-        GroceryList: [...action.categories],
-      };
-
-    case REMOVE_FROM_RECIPE:
-      return {
-        ...state,
-        Recipe: action.ingredients
-      }  
       default:
         return state;
   }
