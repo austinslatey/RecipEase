@@ -7,7 +7,7 @@ const typeDefs = gql`
     tags: [String]
     servings: String
     time: String
-    recipeName: String
+    name: String
     ingredients: [String]
   }
 
