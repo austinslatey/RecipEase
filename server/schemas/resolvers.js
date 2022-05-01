@@ -20,6 +20,8 @@ const resolvers = {
           return user ;
         },
         addRecipe: async (parent, args) => {
+            console.log('test');
+            console.log(args);
             const recipe = await Recipe.create(args);
             return recipe;
         },
