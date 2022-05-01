@@ -11,7 +11,7 @@ import { ADD_TO_RECIPE } from '../../utils/mutations';
 
 
 export default function Recipies() {
-  const [formState, setFormState] = useState({name:"",instructions:[""],tags:[""],servings:"",time:"",ingredients:[""]})
+  const [formState, setFormState] = useState({name:"",instructions:[],tags:[""],servings:"",time:"",ingredients:[]})
   const [addRecipe, {error}] = useMutation(ADD_TO_RECIPE)
 
   const handleFormSubmit = async (event) => {
@@ -81,7 +81,7 @@ export default function Recipies() {
                 right: 75,
           }}>
           <h4>Name</h4>
-        <textarea onChange={onChange} id='Name'></textarea>
+        <textarea onChange={onChange} id='name'></textarea>
         </div>
         <div style={{
                 position: 'relative',
