@@ -14,7 +14,7 @@ export default function Dashboard() {
   return (
     <div>
       <h1>Dashboard</h1>
-      {recipes?.map(recipe=>(
+      {getAllRecipes?.map(recipe=>(
         <div>
           <p>name: {recipe.name}</p>
           <p></p>
