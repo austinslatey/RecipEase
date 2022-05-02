@@ -18,23 +18,29 @@ const typeDefs = gql`
     recipes: [Recipe]
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type GroceryList {
     recipe: [Recipe]
   }
 
   type Query {
-    user: User
-    recipe(_id: ID!): Recipe
-    recipes:[Recipe]
-    groceryList: GroceryList  
+    getOneUser(userName: String!): User
+    getAllUsers: [User]
+    getAllRecipes: [Recipe]
+    getUserRecipes(_id: ID!): [Recipe]
+    getUserGroceryList(_id: ID!): GroceryList 
   }
 
   type Mutation {
-    addUser(userName: String!, email: String!, password: String!): User
+    addUser(userName: String!, email: String!, password: String!): Auth
     addRecipe(name: String!, instructions: [String]!, tags: [String], servings: String, time: String, ingredients: [String]) : Recipe
     updateUser(userName: String, email: String, password: String): User
     updateRecipe(_id: ID!, instructions: String!, tags: String, servings: String, time: String, ingredients: String!): Recipe
-    login(email: String!, password: String!): User
+    login(email: String!, password: String!): Auth
   }
 `;
 
