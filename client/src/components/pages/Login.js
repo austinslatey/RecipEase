@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { LOGIN } from '../../utils/mutations';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,31 +15,14 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
-// function Copyright(props) {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://mui.com/">
-//         Your Website
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
-
 const theme = createTheme();
 
 export default function Login() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+
+  const [formState, setFormState] = useState({ email:'', password:''})
+  const [login, { error }] = useMutation(LOGIN);
+
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -88,6 +74,7 @@ export default function Login() {
             >
               Sign In
             </Button>
+            {error && <Typography>Login failed</Typography>}
             <Grid container>
               {/* <Grid item xs>
                 <Link href="#" variant="body2">
