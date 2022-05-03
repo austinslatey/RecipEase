@@ -13,40 +13,34 @@ export default function Dashboard() {
   return (
     <div>
       <h1>Dashboard</h1>
-      {recipes?.map(recipe=>(
-        <div>
-          
-          <h2>Name: {recipe.name}</h2>
-          <ul>
-            <li>
-              <h3>Instructions:</h3>
-              <p>{recipe.instructions}</p>
-            </li>
-            <li>
-              <h3>
-                Tags:
-              </h3>
-              <p>{recipe.tags}</p>
-            </li>
-            <li>
-              <h3>
-                Servings:
-              </h3>
-              <p>{recipe.servings}</p>
-            </li> 
-            <li>
-              <h3>Total Time:</h3>
-              <p>{recipe.time}</p>
-            </li>
-            <li>          
-              <h3>Ingredients:</h3>
-              <p>{recipe.ingredients}</p>
-            </li>
-          
-
-          </ul>
-        </div>
+      {recipes?.map(recipe => (
+      <div>
+        <h2>Name: {recipe.name}</h2>
+        <ul>
+          <li>
+            <h3>Instructions:</h3>
+            <p>{recipe.instructions}</p>
+          </li>
+          <li>
+            <h3>Tags:</h3>
+            <p>{recipe.tags}</p>
+          </li>
+          <li>
+            <h3>Servings:</h3>
+            <p>{recipe.servings}</p>
+          </li>
+          <li>
+            <h3>Total Time:</h3>
+            <p>{recipe.time}</p>
+          </li>
+          <li>
+            <h3>Ingredients:</h3>
+            <p>{recipe.ingredients}</p>
+          </li>
+        </ul>
+      </div>
       ))}
     </div>
-  );
+    );
+    
 } 
