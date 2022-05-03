@@ -19,7 +19,7 @@ function NavTabs({ currentPage, handlePageChange }) {
           onClick={() => handlePageChange('Dashboard')}
           className={currentPage === 'Dashboard' ? 'nav-link active' : 'nav-link'}
         >
-          Dashb.oard
+          Dashboard
         </a>
       </li>
       <li className="nav-item">
