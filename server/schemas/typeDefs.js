@@ -35,7 +35,6 @@ const typeDefs = gql`
     getAllUsers: [User]
     getAllRecipes: [Recipe]
     getUserRecipes(_id: ID!): [Recipe]
-    getUserGroceryList(_id: ID!): GroceryList 
   }
 
   type Mutation {
