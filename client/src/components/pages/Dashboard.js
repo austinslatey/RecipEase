@@ -16,8 +16,8 @@ export default function Dashboard() {
       {recipes?.map(recipe=>(
         <div>
           <p>name: {recipe.name}</p>
-          {/* <p></p>
-          <p></p> */}
+          <p>instructions: {recipe.instructions}</p>
+          <p></p>
         </div>
       ))}
     </div>

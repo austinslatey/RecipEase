@@ -26,7 +26,7 @@ export default function RecipEaseContainer() {
     if (currentPage === "Dashboard") {
       return <Dashboard />;
     }
-    if (currentPage === "Recipies") {
+    if (currentPage === "Recipes") {
       return <Recipes />;
     }
     if (currentPage === "GroceryList") {
