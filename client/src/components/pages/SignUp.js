@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
 import Avatar from '@mui/material/Avatar';
@@ -15,16 +16,39 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function SignUp() {
+  const [addUser, { error }] = useMutation(ADD_USER)
+  const [formState, setFormState] = useState({
+    userName: '',
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+    console.log({...formState})
+  }
+
   const handleSubmit = async event => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    // const data = new FormData(event.currentTarget);
+    // console.log({
+    //   email: data.get('email'),
+    //   password: data.get('password'),
+    // });
+    try {
+      const { data } = await addUser({
+        variables: { ...formState }
+      })
+      console.log(data)
+    } catch (e) {
+      console.error(e)
+    }
   };
-
-  const [addUser, { error }] = useMutation(ADD_USER);
 
   return (
     <ThemeProvider theme={theme}>
@@ -47,12 +71,13 @@ export default function SignUp() {
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
-                  name="Username"
+                  name="userName"
                   required
                   fullWidth
                   id="userName"
                   label="User Name"
                   autoFocus
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -63,6 +88,7 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -74,6 +100,7 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  onChange={handleChange}
                 />
               </Grid>
             </Grid>
@@ -85,6 +112,7 @@ export default function SignUp() {
             >
               Sign Up
             </Button>
+            {error && <Typography>Sign up failed</Typography>}
             <Grid container justifyContent="flex-end">
               <Grid item>
                 {/* <Link href="#Login" variant="body2">

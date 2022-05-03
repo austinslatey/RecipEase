@@ -19,8 +19,38 @@ const theme = createTheme();
 
 export default function Login() {
 
-  const [formState, setFormState] = useState({ email:'', password:''})
   const [login, { error }] = useMutation(LOGIN);
+  const [formState, setFormState] = useState({ email: '', password: '' })
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+    console.log({ ...formState })
+  }
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+
+    try {
+      const { data } = await login({
+        variables: { ...formState }
+      });
+
+      console.log(data);
+    } catch (e) {
+      console.error(e);
+    }
+
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    });
+  }
 
 
 
@@ -41,7 +71,9 @@ export default function Login() {
           <Typography component="h1" variant="h5">
             Log In
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form"
+            onSubmit={handleSubmit} 
+            noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -50,6 +82,7 @@ export default function Login() {
               label="Email Address"
               name="email"
               autoComplete="email"
+              onChange={handleChange}
               autoFocus
             />
             <TextField
@@ -60,6 +93,7 @@ export default function Login() {
               label="Password"
               type="password"
               id="password"
+              onChange={handleChange}
               autoComplete="current-password"
             />
             <FormControlLabel
