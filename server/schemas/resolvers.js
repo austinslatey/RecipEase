@@ -4,6 +4,16 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
+        me:  async (parent, args, context) => {
+            if (context.user){
+            const userData = await User.findOne({_id: context.user._id})
+              .select('-__v -password')
+
+              return userData;
+            }
+
+            throw new AuthenticationError('Not logged in')
+        },
         getOneUser: async (parent, args) => {
             return await User.findOne();
         },
@@ -56,6 +66,12 @@ const resolvers = {
             const recipe = await Recipe.create(args);
             return recipe;
         },
+        // addRecipetoGroceryList: async (parent, args) => {
+        //     console.log('test');
+        //     console.log(args);
+        //     const groceryList = await GroceryList.create(args);
+        //     return groceryList;
+        // }
         updateUser: async (parent, args) => {
             return await User.findByIdAndUpdate({ _id: args._id }, { userName: args.userName }, { new: true });
         }
