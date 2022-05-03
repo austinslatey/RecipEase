@@ -59,12 +59,12 @@ const resolvers = {
             const recipe = await Recipe.create(args);
             return recipe;
         },
-        addRecipetoGroceryList: async (parent, args) => {
-            console.log('test');
-            console.log(args);
-            const groceryList = await GroceryList.create(args);
-            return groceryList;
-        },
+        // addRecipetoGroceryList: async (parent, args) => {
+        //     console.log('test');
+        //     console.log(args);
+        //     const groceryList = await GroceryList.create(args);
+        //     return groceryList;
+        // }
         updateUser: async (parent, args) => {
             return await User.findByIdAndUpdate({ _id: args._id }, { userName: args.userName }, { new: true });
         }
