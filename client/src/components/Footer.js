@@ -74,9 +74,6 @@ export default function Footer() {
                         <Typography id='modal-modal-description' sx={{ mt: 2 }}>
                             Austin Slatey : <Link href="mailto:austinslater58@gmail.com">austinslater58@gmail.com</Link>
                         </Typography>
-                        <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-                            Tony Byers : <Link href="mailto:anthonyw.byers@gmail.com">anthonyw.byers@gmail.com</Link>
-                        </Typography>
                     </Box>
                 </Modal>
             </Box>

@@ -28,6 +28,7 @@ const typeDefs = gql`
   }
 
   type Query {
+    me: User
     getOneUser(userName: String!): User
     getAllUsers: [User]
     getAllRecipes: [Recipe]
