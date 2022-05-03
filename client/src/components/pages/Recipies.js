@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 import { lightBlue } from "@mui/material/colors";
 import { color } from "@mui/system";
 import { useMutation } from "@apollo/client";
-import { ADD_TO_RECIPE, ADD_TO_GROCERY_LIST } from '../../utils/mutations';
+import { ADD_TO_RECIPE} from '../../utils/mutations';
 
 
 // recipes 
