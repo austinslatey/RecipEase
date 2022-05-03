@@ -3,13 +3,13 @@ import { Grid } from '@mui/material';
 import { Box } from '@mui/material';
 import { Button } from '@mui/material';
 import { lightBlue } from "@mui/material/colors";
-import { color } from "@mui/system";
+// import { color } from "@mui/system";
 import { useMutation } from "@apollo/client";
 import { ADD_TO_RECIPE} from '../../utils/mutations';
 
 
 // recipes 
-export default function Recipies() {
+export default function Recipes() {
   const [formState, setFormState] = useState({name:"",instructions:[],tags:[""],servings:"",time:"",ingredients:[]})
   const [addRecipe, {error}] = useMutation(ADD_TO_RECIPE)
   const handleFormSubmit = async (event) => {
@@ -35,10 +35,10 @@ export default function Recipies() {
   //   event.preventDefault();
   //   console.log(formState)
   //   try{
-  //     for (let i=0; i<formState.Recipies.length; i++){
+  //     for (let i=0; i<formState.Recipes.length; i++){
   //     const mutationResponseAddtoGroceryList = await addGroceryList({
   //       variables: { 
-  //         Recipies: formState.Recipies, 
+  //         Recipes: formState.Recipes, 
   //         }
   //     });
   //   }}
@@ -55,7 +55,7 @@ export default function Recipies() {
   //   }
   //   setFormState({
   //     ...formState,
-  //     Recipies: [...formState.Recipies, nextRecipes]
+  //     Recipes: [...formState.Recipes, nextRecipes]
   //   })
   //   document.querySelector("#Recipes").value="";
   // }
@@ -184,7 +184,7 @@ export default function Recipies() {
                 width: 175,
                 bottom: 150,
                 left: 100
-          }} >Save Recipie</Button>
+          }} >Save Recipe</Button>
           </div>
       </Grid> 
     </Box>

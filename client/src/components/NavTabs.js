@@ -1,8 +1,6 @@
 import React from 'react';
 
 
-
-
 function NavTabs({ currentPage, handlePageChange }){
   return (
   
@@ -29,11 +27,11 @@ function NavTabs({ currentPage, handlePageChange }){
           </li>
           <li className="nav-item">
             <a
-              href="#Recipies"
-              onClick={() => handlePageChange('Recipies')}
-              className={currentPage === 'Recipies' ? 'nav-link active' : 'nav-link'}
+              href="#Recipes"
+              onClick={() => handlePageChange('Recipes')}
+              className={currentPage === 'Recipes' ? 'nav-link active' : 'nav-link'}
             >
-              Recipies
+              Recipes
             </a>
           </li>
           <li className="nav-item">
@@ -69,7 +67,7 @@ function NavTabs({ currentPage, handlePageChange }){
     );
 }
 const c3Style = {
-  background: 'steelblue',
+  background: '#48CAE4',
   color: 'white',
   padding: '2.0rem',
   text: 'white'

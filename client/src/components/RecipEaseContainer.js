@@ -2,17 +2,12 @@ import React, { useState } from "react";
 import NavTabs from "./NavTabs";
 import Homepage from "./pages/Homepage";
 import Dashboard from "./pages/Dashboard";
-import Recipies from "./pages/Recipies";
+import Recipes from "./pages/Recipes";
 import GroceryList from "./pages/GroceryList";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Footer from "./Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-
-
-
 
 
 export default function RecipEaseContainer() {
@@ -26,8 +21,8 @@ export default function RecipEaseContainer() {
     if (currentPage === "Dashboard") {
       return <Dashboard />;
     }
-    if (currentPage === "Recipies") {
-      return <Recipies />;
+    if (currentPage === "Recipes") {
+      return <Recipes />;
     }
     if (currentPage === "GroceryList") {
       return <GroceryList />;
@@ -53,8 +48,8 @@ export default function RecipEaseContainer() {
 }
 
 const c2Style = {
-  background: 'steelblue',
-  color: 'white',
+  background: '#CAF0F8',
+  color: '#0077B6',
   padding: '2.0rem',
   text: 'black'
 }
