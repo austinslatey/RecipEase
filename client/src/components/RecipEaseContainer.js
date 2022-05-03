@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavTabs from "./NavTabs";
 import Homepage from "./pages/Homepage";
 import Dashboard from "./pages/Dashboard";
-import Recipies from "./pages/Recipies";
+import Recipes from "./pages/Recipes";
 import GroceryList from "./pages/GroceryList";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -27,7 +27,7 @@ export default function RecipEaseContainer() {
       return <Dashboard />;
     }
     if (currentPage === "Recipies") {
-      return <Recipies />;
+      return <Recipes />;
     }
     if (currentPage === "GroceryList") {
       return <GroceryList />;
