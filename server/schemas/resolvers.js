@@ -20,6 +20,13 @@ const resolvers = {
         getAllUsers: async (parent) => {
             return await User.find();
         },
+        recipe: async (parent, { _id }) => {
+            return await Recipe.findById(_id);
+        },
+
+        recipes: async (parent, args) => {
+            return await Recipe.find();
+        },
         getUserRecipes: async (parent, { _id }) => {
             return await Recipe.findById(_id);
         },

@@ -28,12 +28,13 @@ const typeDefs = gql`
   }
 
   type Query {
+    recipe(_id: ID!): Recipe
+    recipes:[Recipe]
     me: User
     getOneUser(userName: String!): User
     getAllUsers: [User]
     getAllRecipes: [Recipe]
     getUserRecipes(_id: ID!): [Recipe]
-    getUserGroceryList(_id: ID!): GroceryList  
   }
 
   type Mutation {
