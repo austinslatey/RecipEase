@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 import { Box } from '@mui/material';
 import { Button } from '@mui/material';
 import { lightBlue } from "@mui/material/colors";
-import { color } from "@mui/system";
+// import { color } from "@mui/system";
 import { useMutation } from "@apollo/client";
 import { ADD_TO_RECIPE} from '../../utils/mutations';
 
@@ -24,7 +24,8 @@ export default function Recipies() {
           servings: formState.servings, 
           time: formState.time, 
           ingredients: formState.ingredients }
-      });
+        });
+        console.log(mutationResponse)
     }
     catch{
       console.log(error)
