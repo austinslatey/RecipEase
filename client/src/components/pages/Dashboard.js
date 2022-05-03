@@ -1,7 +1,6 @@
 import React from "react";
 
 
-// import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_RECIPES } from '../../utils/queries';
 
@@ -14,13 +13,13 @@ export default function Dashboard() {
   return (
     <div>
       <h1>Dashboard</h1>
-      {getAllRecipes?.map(recipe=>(
+      {recipes?.map(recipe=>(
         <div>
           <p>name: {recipe.name}</p>
-          <p></p>
+          <p>instructions: {recipe.instructions}</p>
           <p></p>
         </div>
       ))}
     </div>
   );
-}
+} 
