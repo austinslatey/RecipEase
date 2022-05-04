@@ -113,7 +113,7 @@ export default function Recipies() {
         <Grid  style={{
                 position: 'relative',
                 width:750,
-                height: 525,
+                height: 550,
                 backgroundColor: "lightblue",
                 opacity: 10,
                 padding: 10,
@@ -171,12 +171,13 @@ export default function Recipies() {
                 position: 'relative',
                 height: 55,
                 width: 175,
-                bottom: 150,
-                left: 100
+                top: 40,
+                right: 235
           }} >Add Instructions</Button>
           </form>
         </div>
-        <Button onClick={handleFormSubmit} color="primary" variant="contained" hfre="#add-ingredient" style={{
+        <Button onClick={handleFormSubmit} variant="contained" hfre="#add-ingredient" style={{
+                backgroundColor: "lightBlue",
                 position: 'relative',
                 height: 55,
                 width: 175,
