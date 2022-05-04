@@ -20,15 +20,22 @@ const resolvers = {
         getAllUsers: async (parent) => {
             return await User.find();
         },
+        recipe: async (parent, { _id }) => {
+            return await Recipe.findById(_id);
+        },
+
+        recipes: async (parent, args) => {
+            return await Recipe.find();
+        },
         getUserRecipes: async (parent, { _id }) => {
             return await Recipe.findById(_id);
         },
         getAllRecipes: async (parent) => {
             return await Recipe.find()
-        },
-        getUserGroceryList: async (parent, { _id }) => {
-            return await GroceryList.findById(_id);
-        },
+        }
+        // getUserGroceryList: async (parent, { _id }) => {
+        //     return await GroceryList.findById(_id);
+        // },
     },
     Mutation: {
         addUser: async (parent, args) => {

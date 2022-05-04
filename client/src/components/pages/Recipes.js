@@ -93,7 +93,7 @@ export default function Recipies() {
     const { id, value } = event.target;
     // console.log({id})
     // console.log({value})
-    console.log(formState)
+    console.log(formState.name);
       setFormState({
         ...formState,
         [id]: value
