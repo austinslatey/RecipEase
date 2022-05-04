@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import NavTabs from "./NavTabs";
 import Homepage from "./pages/Homepage";
 import Dashboard from "./pages/Dashboard";
-import Recipies from "./pages/Recipies";
+import Recipes from "./pages/Recipes";
 import GroceryList from "./pages/GroceryList";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import Footer from "./Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -25,8 +26,8 @@ export default function RecipEaseContainer() {
     if (currentPage === "Dashboard") {
       return <Dashboard />;
     }
-    if (currentPage === "Recipies") {
-      return <Recipies />;
+    if (currentPage === "Recipes") {
+      return <Recipes />;
     }
     if (currentPage === "GroceryList") {
       return <GroceryList />;
@@ -40,12 +41,20 @@ export default function RecipEaseContainer() {
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
-    <div>
+    <div style={c2Style}>
       <div>
       {/* the handlepage function is what were using as prop */}
       <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
       {renderPage()}
+      <Footer />
       </div>
     </div>
   );
+}
+
+const c2Style = {
+  background: 'steelblue',
+  color: 'white',
+  padding: '2.0rem',
+  text: 'black'
 }
