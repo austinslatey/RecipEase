@@ -61,12 +61,12 @@ function NavTabs({ currentPage, handlePageChange }) {
         </ul>
     );
 }
-const c3Style = {
-  background: 'steelblue',
-  color: 'white',
-  padding: '2.0rem',
-  text: 'white'
-}
- 
+// const c3Style = {
+//   background: 'steelblue',
+//   color: 'white',
+//   padding: '2.0rem',
+//   text: 'white'
+// }
+
 
 export default NavTabs;

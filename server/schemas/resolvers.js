@@ -32,10 +32,10 @@ const resolvers = {
         },
         getAllRecipes: async (parent) => {
             return await Recipe.find()
-        },
-        getUserGroceryList: async (parent, { _id }) => {
-            return await GroceryList.findById(_id);
-        },
+        }
+        // getUserGroceryList: async (parent, { _id }) => {
+        //     return await GroceryList.findById(_id);
+        // },
     },
     Mutation: {
         addUser: async (parent, args) => {
