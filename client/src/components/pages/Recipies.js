@@ -119,26 +119,27 @@ export default function Recipies() {
                 padding: 10,
                 borderRadius: 25
               }}>
-          <h4>Name</h4>
+          <h4 style={{ position: 'relative', left:60, fontFamily:"bold", color:"white"}}>Name</h4>
           <textarea onChange={onChange} id='name' style={{ 
                 borderRadius: 25,
                 padding:10}} >
                 </textarea>
-          <h4>Add Ingredient</h4>
+          <h4 style={{position: 'relative', left:20, fontFamily:"bold", color:"white"}}>Add Ingredient</h4>
         <textarea style={{ 
                 borderRadius: 25,
                 padding:10}}
                 id='ingredient'></textarea>
         <Button onClick={handleFormSubmitIngredient} color="primary" variant="contained" hfre="#add-ingredient" style={{
+                backgroundColor: "steelblue",
                 position: 'relative',
-                right: 120,
+                right: 130,
                 top: 30
           }} >Add </Button>
           <div style={{
             position: 'relative',
             top: 35
           }}>
-          <h4> Servings</h4>
+          <h4 style={{position: 'relative', left:50, fontFamily:"bold", color:"white"}}> Servings</h4>
           <textarea onChange={onChange} id='servings'style={{
                 borderRadius: 25,
                 padding:10
@@ -148,7 +149,7 @@ export default function Recipies() {
                 position: 'relative',
                 top: 35
           }}>
-          <h4> Time to Cook</h4>
+          <h4 style={{position: 'relative', left:30, fontFamily:"bold", color:"white"}}> Time to Cook</h4>
         <textarea onChange={onChange} id='time' style={{
                 borderRadius: 25,
                 padding:10
@@ -159,7 +160,7 @@ export default function Recipies() {
                 bottom: 410,
                 left: 300,
           }}>
-          <h4 style={{position: 'relative',left:75}}> Instructions</h4>
+          <h4 style={{position: 'relative',  left:90, fontFamily:"bold", color:"white"}}> Instructions</h4>
           <form id='instructions-test'>
             <textarea id='instructions' style={{
                     width: 300,
@@ -168,6 +169,7 @@ export default function Recipies() {
                     padding: 10
             }}></textarea>
             <Button onClick={handleFormSubmitInstructions} color="primary" variant="contained" hfre="#add-ingredient" style={{
+                backgroundColor: "steelblue",
                 position: 'relative',
                 height: 55,
                 width: 175,
@@ -177,13 +179,16 @@ export default function Recipies() {
           </form>
         </div>
         <Button onClick={handleFormSubmit} variant="contained" hfre="#add-ingredient" style={{
+                borderRadius: 25,
+                fontSize: 20,
+                fontWeight: "bolder",
                 backgroundColor: "lightBlue",
                 position: 'relative',
                 height: 55,
                 width: 175,
-                bottom: 150,
-                left: 100
-          }} >Save Recipie</Button>
+                bottom: 325,
+                left: 275
+          }} >Save Recipe</Button>
           </Grid>
       </Grid> 
     </Box>
