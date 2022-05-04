@@ -109,45 +109,63 @@ export default function Recipies() {
             alignItems: 'center',
           }}>
       <Grid >
-        <h1>Add A Recipe</h1>
-        <div style={{
+        <h1  style={{ marginLeft: 250}}>Add A Recipe</h1>
+        <Grid  style={{
                 position: 'relative',
-                top: 5,
-                right: 75,
-                backgroundColor: lightBlue
-          }}>
-        <div style={{
-                position: 'relative',
-                top: 75,
-                right: 75,
-          }}>
+                width:750,
+                height: 525,
+                backgroundColor: "lightblue",
+                opacity: 10,
+                padding: 10,
+                borderRadius: 25
+              }}>
           <h4>Name</h4>
-        <textarea onChange={onChange} id='name'></textarea>
-        </div>
-        <div style={{
-                position: 'relative',
-                top: 175,
-                right: 75,
-          }}>
+          <textarea onChange={onChange} id='name' style={{ 
+                borderRadius: 25,
+                padding:10}} >
+                </textarea>
           <h4>Add Ingredient</h4>
-        <textarea id='ingredient'></textarea>
+        <textarea style={{ 
+                borderRadius: 25,
+                padding:10}}
+                id='ingredient'></textarea>
         <Button onClick={handleFormSubmitIngredient} color="primary" variant="contained" hfre="#add-ingredient" style={{
                 position: 'relative',
                 right: 120,
-                top: 25,
+                top: 30
           }} >Add </Button>
+          <div style={{
+            position: 'relative',
+            top: 35
+          }}>
+          <h4> Servings</h4>
+          <textarea onChange={onChange} id='servings'style={{
+                borderRadius: 25,
+                padding:10
+          }}></textarea>
         </div>
         <div style={{
                 position: 'relative',
-                bottom: 130,
-                left: 250,
-                backgroundColor: lightBlue
+                top: 35
           }}>
-          <h4> Instructions</h4>
+          <h4> Time to Cook</h4>
+        <textarea onChange={onChange} id='time' style={{
+                borderRadius: 25,
+                padding:10
+          }}></textarea>
+        </div>
+        <div style={{
+                position: 'relative',
+                bottom: 410,
+                left: 300,
+          }}>
+          <h4 style={{position: 'relative',left:75}}> Instructions</h4>
           <form id='instructions-test'>
             <textarea id='instructions' style={{
                     width: 300,
-                    height: 300
+                    height: 370,
+                    borderRadius: 25,
+                    padding: 10
             }}></textarea>
             <Button onClick={handleFormSubmitInstructions} color="primary" variant="contained" hfre="#add-ingredient" style={{
                 position: 'relative',
@@ -158,27 +176,6 @@ export default function Recipies() {
           }} >Add Instructions</Button>
           </form>
         </div>
-        <div style={{
-                position: 'relative',
-                bottom: 70,
-                left: 250,
-                backgroundColor: lightBlue
-          }}>
-          <h4> Servings</h4>
-        <textarea onChange={onChange} id='servings'style={{
-                borderRadius: 25
-          }}></textarea>
-        </div>
-        <div style={{
-                position: 'relative',
-                bottom: 170,
-                right: 75
-          }}>
-          <h4> Time to Cook</h4>
-        <textarea onChange={onChange} id='time' style={{
-                borderRadius: 25
-          }}></textarea>
-        </div>
         <Button onClick={handleFormSubmit} color="primary" variant="contained" hfre="#add-ingredient" style={{
                 position: 'relative',
                 height: 55,
@@ -186,7 +183,7 @@ export default function Recipies() {
                 bottom: 150,
                 left: 100
           }} >Save Recipie</Button>
-          </div>
+          </Grid>
       </Grid> 
     </Box>
   );
