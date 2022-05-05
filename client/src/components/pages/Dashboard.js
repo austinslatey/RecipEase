@@ -1,6 +1,6 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-// import { Box } from '@mui/material';
+import { Box } from '@mui/material';
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
@@ -20,7 +20,7 @@ export default function Dashboard() {
   return (
     <ThemeProvider theme={theme}>
       <h1>Dashboard</h1>
-
+      <Box sx={{minHeight:"calc(100vh - 40px)" }}>
       {recipes?.map((recipe) => (
         <Card sx={{ maxWidth: "40vw", minWidth: "10vw" }}>
           <CardContent>
@@ -46,6 +46,7 @@ export default function Dashboard() {
       </CardActions>
         </Card>
       ))}
+      </Box>
     </ThemeProvider>
   );
 }
