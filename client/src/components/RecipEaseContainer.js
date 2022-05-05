@@ -9,12 +9,6 @@ import SignUp from "./pages/SignUp";
 import Footer from "./Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
-
-
-
 export default function RecipEaseContainer() {
   const [currentPage, setCurrentPage] = useState("Home");
 
@@ -46,15 +40,14 @@ export default function RecipEaseContainer() {
       {/* the handlepage function is what were using as prop */}
       <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
       {renderPage()}
-      <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
 
 const c2Style = {
-  background: 'steelblue',
-  color: 'white',
+  background: '#CAF0F8',
+  color: '#03045E',
   padding: '2.0rem',
-  text: 'black'
 }

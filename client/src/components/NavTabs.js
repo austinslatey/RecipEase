@@ -3,7 +3,7 @@ import React from 'react';
 
 function NavTabs({ currentPage, handlePageChange }) {
   return (
-    <ul className="nav nav-tabs">
+    <ul className="nav nav-tabs" style={{ minHeight: '20px', backgroundColor:"#90E0EF"}}>
       <li className="nav-item">
         <a
           href="#homepage"
@@ -61,12 +61,6 @@ function NavTabs({ currentPage, handlePageChange }) {
         </ul>
     );
 }
-// const c3Style = {
-//   background: 'steelblue',
-//   color: 'white',
-//   padding: '2.0rem',
-//   text: 'white'
-// }
 
 
 export default NavTabs;

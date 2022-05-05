@@ -11,7 +11,7 @@ export default function Dashboard() {
   console.log(recipes);
 
   return (
-    <div>
+    <div style={{minHeight:"calc(100vh - 40px)"}}>
       <h1>Dashboard</h1>
       {recipes?.map(recipe => (
       <div>

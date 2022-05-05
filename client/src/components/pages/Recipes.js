@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import { Grid } from '@mui/material';
 import { Box } from '@mui/material';
 import { Button } from '@mui/material';
-import { lightBlue } from "@mui/material/colors";
+// import { lightBlue } from "@mui/material/colors";
 // import { color } from "@mui/system";
 import { useMutation } from "@apollo/client";
 import { ADD_TO_RECIPE} from '../../utils/mutations';
@@ -107,6 +107,7 @@ export default function Recipies() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            minHeight:"calc(100vh - 40px)"
           }}>
       <Grid >
         <h1  style={{ marginLeft: 250}}>Add A Recipe</h1>
