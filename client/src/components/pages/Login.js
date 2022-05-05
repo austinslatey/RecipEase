@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Auth from '../../utils/auth'
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../../utils/mutations';
@@ -27,9 +28,11 @@ export default function Login() {
 
     setFormState({
       ...formState,
-      [name]: value,
+      // email : formState.email,
+      // password : formState.password,
+      [name] : value,
     });
-    console.log({ ...formState })
+    console.log(event.target.value)
   }
 
   const handleSubmit = async event => {
@@ -37,9 +40,10 @@ export default function Login() {
 
     try {
       const { data } = await login({
-        variables: { ...formState }
+        variables: {...formState}
+        // variables: { email: formState.email, password: formState.password }
       });
-
+      Auth.login(data.login.token)
       console.log(data);
     } catch (e) {
       console.error(e);
@@ -51,7 +55,6 @@ export default function Login() {
       password: '',
     });
   }
-
 
 
   return (
@@ -81,7 +84,7 @@ export default function Login() {
               id="email"
               label="Email Address"
               name="email"
-              autoComplete="email"
+              // autoComplete="email"
               onChange={handleChange}
               autoFocus
             />
@@ -94,7 +97,7 @@ export default function Login() {
               type="password"
               id="password"
               onChange={handleChange}
-              autoComplete="current-password"
+              // autoComplete="current-password"
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Auth from '../../utils/auth'
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
@@ -35,16 +36,12 @@ export default function SignUp() {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    // const data = new FormData(event.currentTarget);
-    // console.log({
-    //   email: data.get('email'),
-    //   password: data.get('password'),
-    // });
     try {
       const { data } = await addUser({
         variables: { ...formState }
       })
       console.log(data)
+      Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e)
     }
