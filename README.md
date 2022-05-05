@@ -5,6 +5,7 @@
 - [RecipEase](#recipease)
   - [Table of Contents](#table-of-contents)
   - [User-Story](#user-story)
+  - [Screen-Shots](#screen-shots)
   - [Description](#description)
   - [Usage](#usage)
   - [Installation](#installation)
@@ -29,6 +30,10 @@
     WHEN I click import a recipe
     THEN I can import a recipe from certain website and the ingredients will be added to my grocery list
 
+
+
+## Screen-Shots
+  ![RecipEase](assets/images/READMEImg.jpg)
 
 ## Description
 
