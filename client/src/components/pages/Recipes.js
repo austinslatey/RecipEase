@@ -107,6 +107,7 @@ export default function Recipies() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            minHeight:"calc(100vh - 40px)"
           }}>
       <Grid >
         <h1  style={{ marginLeft: 250}}>Add A Recipe</h1>

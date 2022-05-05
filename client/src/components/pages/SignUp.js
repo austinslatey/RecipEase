@@ -57,6 +57,7 @@ export default function SignUp() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            minHeight:"calc(100vh - 40px)"
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>

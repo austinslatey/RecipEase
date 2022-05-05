@@ -27,25 +27,19 @@ export default function Footer() {
     const handleClose = () => setOpen(false);
 
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: '100vh',
-            }}
-        >
-            <CssBaseline />
             <Box
                 component="footer"
                 sx={{
                     py: 3,
                     px: 2,
                     mt: 'auto',
+                    minHeight:'20px',
                     textAlign: 'center',
-                    backgroundColor: (theme) =>
-                        theme.palette.mode === 'light'
-                            ? theme.palette.grey[200]
-                            : theme.palette.grey[800],
+                    backgroundColor: "#90E0EF"
+                    // backgroundColor: (theme) =>
+                    //     theme.palette.mode === 'light'
+                    //         ? theme.palette.grey[200]
+                    //         : theme.palette.grey[800],
                 }}
             >
                 <Container maxWidth="xs">
@@ -77,6 +71,5 @@ export default function Footer() {
                     </Box>
                 </Modal>
             </Box>
-        </Box>
     );
 }
