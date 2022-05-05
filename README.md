@@ -116,7 +116,6 @@
 ## Usage
 
 To provide a one stop shop for all your cooking needs including shopping list generator, recipie finder(using 3rd party api), recipie creator and " updater ", all save by the individuals account"
-
 ## Contributions
 
 Agent-Shields, LippoHippo, Kyler-Mclachlan, and austinslatey.
