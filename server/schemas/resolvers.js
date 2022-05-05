@@ -25,6 +25,7 @@ const resolvers = {
         },
 
         recipes: async (parent, args) => {
+            console.log('recipes found');
             return await Recipe.find();
         },
         getUserRecipes: async (parent, { _id }) => {
@@ -61,10 +62,16 @@ const resolvers = {
             return { token, user };
         },
         addRecipe: async (parent, args) => {
+            try{
             console.log('test');
             console.log(args);
             const recipe = await Recipe.create(args);
             return recipe;
+            } 
+            catch (err){
+                console.log(err);
+                throw new AuthenticationError();
+            }
         },
         // addRecipetoGroceryList: async (parent, args) => {
         //     console.log('test');

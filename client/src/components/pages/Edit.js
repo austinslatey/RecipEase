@@ -11,33 +11,40 @@ import Typography from "@mui/material/Typography";
 
 import { useQuery } from "@apollo/client";
 import { QUERY_RECIPES } from "../../utils/queries";
-import { maxWidth } from "@mui/system";
+// import { maxWidth } from "@mui/system";
 
-// const bull = (
-//   <Box
-//     component="span"
-//     sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-//   >
-//     •
-//   </Box>
-// );
 
-export default function Dashboard() {
-  const { data, loading } = useQuery(QUERY_RECIPES);
-  const recipes = data?.recipes || [];
-  console.log(recipes);
-  
-  return (
-    <div>
-      <h1>Dashboard</h1>
-      {loading ? (<h1>Loading...</h1>) : (recipes?.map((recipe) => (
-       
+
+export default function Edit () {
+    // loading.. possible input into QUERY_RECIPES 
+    const { data,  } = useQuery(QUERY_RECIPES);
+    const recipes = data?.recipes || [];
+    console.log(recipes);
+    
+
+    //getId and query recipe by id  line 49
+    const [ edit, setEdit] = useState(false);
+  const recipeName = useRef();
+
+  const submitUpdate = () => {
+    try {
+      console.log(recipeName.current?.value);
+      setEdit(false);
+    }
+    catch (err) {
+      console.log(err);
+    }
+ }
+    return (
         <div>
           <Card sx={{ minWidth: 100, maxWidth: 450}}>
           <CardContent>
-            <Typography variant="h3" component="div"> 
-            {recipe.name}
-            </Typography>
+            {/* <Typography variant="h3" component="div">  */}
+            <input
+            ref={recipeName}
+            type='text'
+            ></input>
+            {/* </Typography> */}
 
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
               <h3>Instructions:</h3>
@@ -66,12 +73,10 @@ export default function Dashboard() {
             </CardContent>
 
             <CardActions>
-              <Button size="small">Edit</Button>
+              <Button size="small" onClick={submitUpdate}>Submit</Button>
             </CardActions>
           </Card>
         </div>
-      ))
-      )}
-    </div>
-  );
+
+    )
 }

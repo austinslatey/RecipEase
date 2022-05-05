@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Footer from "./Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Edit  from "./pages/Edit";
 
 
 
@@ -34,9 +35,11 @@ export default function RecipEaseContainer() {
     }
     if (currentPage === "SignUp") {
       return <SignUp />;
-    }
-    if (currentPage === "Login") return <Login />;
-  };
+    } if (currentPage === "Edit") { 
+      return <Dashboard/> }
+    if (currentPage === "Login") 
+    return <Login />;
+  }
 
   const handlePageChange = (page) => setCurrentPage(page);
 

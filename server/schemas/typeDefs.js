@@ -42,7 +42,7 @@ const typeDefs = gql`
     addRecipe(name: String!, instructions: [String]!, tags: [String], servings: String, time: String, ingredients: [String]) : Recipe
     updateUser(userName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
-    # updateRecipe(_id: ID!, instructions: String!, tags: String, servings: String, time: String, ingredients: String!): Recipe
+    updateRecipe(_id: ID!, instructions: String!, tags: String, servings: String, time: String, ingredients: String!): Recipe
     # addRecipetoGroceryList(_id: ID!)
   }
 `;
