@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Auth from '../../utils/auth'
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../../utils/mutations';
@@ -6,9 +7,9 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-// import Link from '@mui/material/Link';
+// import FormControlLabel from '@mui/material/FormControlLabel';
+// import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -27,9 +28,11 @@ export default function Login() {
 
     setFormState({
       ...formState,
-      [name]: value,
+      // email : formState.email,
+      // password : formState.password,
+      [name] : value,
     });
-    console.log({ ...formState })
+    console.log(event.target.value)
   }
 
   const handleSubmit = async event => {
@@ -37,9 +40,10 @@ export default function Login() {
 
     try {
       const { data } = await login({
-        variables: { ...formState }
+        variables: {...formState}
+        // variables: { email: formState.email, password: formState.password }
       });
-
+      Auth.login(data.login.token)
       console.log(data);
     } catch (e) {
       console.error(e);
@@ -53,7 +57,6 @@ export default function Login() {
   }
 
 
-
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -64,6 +67,7 @@ export default function Login() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            minHeight:"calc(100vh - 40px)"
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
@@ -81,7 +85,7 @@ export default function Login() {
               id="email"
               label="Email Address"
               name="email"
-              autoComplete="email"
+              // autoComplete="email"
               onChange={handleChange}
               autoFocus
             />
@@ -94,12 +98,12 @@ export default function Login() {
               type="password"
               id="password"
               onChange={handleChange}
-              autoComplete="current-password"
+              // autoComplete="current-password"
             />
-            <FormControlLabel
+            {/* <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
-            />
+            /> */}
             <Button
               type="submit"
               fullWidth
@@ -116,9 +120,9 @@ export default function Login() {
                 </Link>
               </Grid> */}
               <Grid item>
-                {/* <Link href="#SignUp" variant="body2">
+                <Link href="#SignUp" variant="body2">
                   {"Don't have an account? Sign Up"}
-                </Link> */}
+                </Link>
               </Grid>
             </Grid>
           </Box>
