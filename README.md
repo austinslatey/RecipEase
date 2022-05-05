@@ -5,8 +5,8 @@
 - [RecipEase](#recipease)
   - [Table of Contents](#table-of-contents)
   - [User-Story](#user-story)
+  - [ScreenShots](#screenshots)
   - [Description](#description)
-  - [Usage](#usage)
   - [Installation](#installation)
   - [Contributions](#contributions)
   - [Questions](#questions)
@@ -29,6 +29,9 @@
     WHEN I click import a recipe
     THEN I can import a recipe from certain website and the ingredients will be added to my grocery list
 
+## ScreenShots
+
+![RecipEase](/assets/images/newREADMEimg.jpg)
 
 ## Description
 
@@ -39,9 +42,6 @@
   - Being able to save recipes' ingredients to a grocery list
   - Polishing up UI and minor bug-fixes
 
-## Usage
-
-To provide a one stop shop for all your cooking needs including shopping list generator, recipie finder(using 3rd party api), recipie creator and " updater ", all save by the individuals account"
 
 ## Installation
 
