@@ -7,7 +7,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-// import Link from '@mui/material/Link';
+import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -113,9 +113,9 @@ export default function SignUp() {
             {error && <Typography>Sign up failed</Typography>}
             <Grid container justifyContent="flex-end">
               <Grid item>
-                {/* <Link href="#Login" variant="body2">
+                <Link href="#Login" variant="body2">
                   Already have an account? Sign in
-                </Link> */}
+                </Link>
               </Grid>
             </Grid>
           </Box>
