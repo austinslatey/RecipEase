@@ -7,6 +7,7 @@ import GroceryList from "./pages/GroceryList";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Footer from "./Footer";
+import Account from './pages/Account'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function RecipEaseContainer() {
@@ -25,6 +26,9 @@ export default function RecipEaseContainer() {
     }
     if (currentPage === "GroceryList") {
       return <GroceryList />;
+    }
+    if (currentPage === "Account") {
+      return <Account />;
     }
     if (currentPage === "SignUp") {
       return <SignUp />;

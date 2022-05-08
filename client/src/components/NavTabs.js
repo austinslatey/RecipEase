@@ -55,6 +55,17 @@ function NavTabs({ currentPage, handlePageChange }) {
           </a>
         </li>
       ) : null}
+            {loggedIn ? (
+        <li className="nav-item">
+          <a
+            href="#account"
+            onClick={() => handlePageChange('Account')}
+            className={currentPage === 'Account' ? 'nav-link active' : 'nav-link'}
+          >
+            My Account
+          </a>
+        </li>
+      ) : null}
       {!loggedIn ? (
         <li className="nav-item">
           <a

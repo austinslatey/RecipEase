@@ -46,8 +46,8 @@ export const ADD_USER = gql`
   }
 }
 `
-export const UPDATE_USER = gql`
-  mutation updateUser($_id:ID!, $userName:String!){
-    updateUser(_id:$_id, userName:$userName)
+export const UPDATE_USERNAME = gql`
+  mutation updateUsername($_id:ID!, $userName:String!){
+    updateUsername(_id:$_id, userName:$userName)
   }
 `

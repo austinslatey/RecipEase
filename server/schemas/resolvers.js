@@ -72,7 +72,7 @@ const resolvers = {
         //     const groceryList = await GroceryList.create(args);
         //     return groceryList;
         // }
-        updateUser: async (parent, args) => {
+        updateUsername: async (parent, args) => {
             return await User.findByIdAndUpdate({ _id: args._id }, { userName: args.userName }, { new: true });
         }
     }
