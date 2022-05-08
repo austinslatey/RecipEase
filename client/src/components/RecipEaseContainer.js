@@ -10,7 +10,7 @@ import Footer from "./Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function RecipEaseContainer() {
-  const [currentPage, setCurrentPage] = useState("Home");
+  const [currentPage, setCurrentPage] = useState("Homepage");
 
   //checking each condition to see what page we are on , then rendering that page, otherwise rendering the contact form
   const renderPage = () => {
