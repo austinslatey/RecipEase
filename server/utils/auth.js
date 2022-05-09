@@ -5,7 +5,7 @@ module.exports = {
   signToken: function({ username, email, _id }) {
     const payload = { username, email, _id };
     // console.log(secret)
-    return jwt.sign({ data: payload }, SECRET, { expiresIn: expiration });
+    return jwt.sign({ data: payload },  process.env.SECRET, { expiresIn: expiration });
   },
 
   authMiddleware: function({ req }) {
