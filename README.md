@@ -5,10 +5,9 @@
 - [RecipEase](#recipease)
   - [Table of Contents](#table-of-contents)
   - [User-Story](#user-story)
+  - [ScreenShots](#screenshots)
   - [Description](#description)
-  - [Tests](#tests)
   - [Installation](#installation)
-  - [Usage](#usage)
   - [Contributions](#contributions)
   - [Questions](#questions)
 
@@ -30,17 +29,21 @@
     WHEN I click import a recipe
     THEN I can import a recipe from certain website and the ingredients will be added to my grocery list
 
+## ScreenShots
+
+![RecipEase](/assets/images/newREADMEimg.jpg)
 
 ## Description
 
-//complete
+  RecipEase was created amongst three team members with the same vision. An easy-navigational User Interface that's main mission is to supply a recipe app with multiple useful features. These features include, a login/logout feature that's unique to it's user.This interface also includes, being able to create a recipe from scratch, while saving the recipe to your dashboard.
+  
+  Future development includes: 
+  - Pulling in a npm package that can scrape recipes from the internet
+  - Being able to save recipes' ingredients to a grocery list
+  - Polishing up UI and minor bug-fixes
 
-## Tests
 
-//complete
 ## Installation
-
-    //complete
 
     -- Getting Started with Create React App
 
@@ -113,13 +116,11 @@
 
     This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## Usage
 
-To provide a one stop shop for all your cooking needs including shopping list generator, recipie finder(using 3rd party api), recipie creator and " updater ", all save by the individuals account"
 
 ## Contributions
 
-Agent-Shields, LippoHippo, Kyler-Mclachlan, and austinslatey.
+[Agent-Shields](https://github.com/Agent-Shields), [Kyler-Mclachlan](https://github.com/Kyler-Mclachlan), and [AustinSlatey](https://github.com/austinslatey).
 
 ## Questions
 
