@@ -27,30 +27,21 @@ export default function Footer() {
     const handleClose = () => setOpen(false);
 
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                minHeight: '100vh',
-            }}
-        >
-            <CssBaseline />
             <Box
                 component="footer"
                 sx={{
                     py: 3,
                     px: 2,
                     mt: 'auto',
+                    minHeight:'20px',
                     textAlign: 'center',
-                    backgroundColor: (theme) =>
-                        theme.palette.mode === 'light'
-                            ? theme.palette.grey[200]
-                            : theme.palette.grey[800],
+                    backgroundColor: "#90E0EF"
                 }}
             >
+                <CssBaseline />
                 <Container maxWidth="xs">
                     <ButtonGroup variant="text" aria-label="text button group">
-                        <Button onClick={handleOpen}>Contact Us</Button>
+                        <Button onClick={handleOpen}>Contact</Button>
                         <Button target="_blank" href='https://github.com/austinslatey/RecipEase'>GitHub</Button>
                         <Button>Download</Button>
                     </ButtonGroup>
@@ -77,6 +68,5 @@ export default function Footer() {
                     </Box>
                 </Modal>
             </Box>
-        </Box>
     );
 }

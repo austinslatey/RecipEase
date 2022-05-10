@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import { Grid } from '@mui/material';
 import { Box } from '@mui/material';
 import { Button } from '@mui/material';
-import { lightBlue } from "@mui/material/colors";
+// import { lightBlue } from "@mui/material/colors";
 // import { color } from "@mui/system";
 import { useMutation } from "@apollo/client";
 import { ADD_TO_RECIPE} from '../../utils/mutations';
@@ -107,86 +107,90 @@ export default function Recipies() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            minHeight:"calc(100vh - 40px)"
           }}>
       <Grid >
-        <h1>Add A Recipe</h1>
-        <div style={{
+        <h1  style={{ marginLeft: 250}}>Add A Recipe</h1>
+        <Grid  style={{
                 position: 'relative',
-                top: 5,
-                right: 75,
-                backgroundColor: lightBlue
-          }}>
-        <div style={{
-                position: 'relative',
-                top: 75,
-                right: 75,
-          }}>
-          <h4>Name</h4>
-        <textarea onChange={onChange} id='name'></textarea>
-        </div>
-        <div style={{
-                position: 'relative',
-                top: 175,
-                right: 75,
-          }}>
-          <h4>Add Ingredient</h4>
-        <textarea id='ingredient'></textarea>
+                width:750,
+                height: 550,
+                backgroundColor: "lightblue",
+                opacity: 10,
+                padding: 10,
+                borderRadius: 25
+              }}>
+          <h4 style={{ position: 'relative', left:60, fontFamily:"bold", color:"white"}}>Name</h4>
+          <textarea onChange={onChange} id='name' style={{ 
+                borderRadius: 25,
+                padding:10}} >
+                </textarea>
+          <h4 style={{position: 'relative', left:20, fontFamily:"bold", color:"white"}}>Add Ingredient</h4>
+        <textarea style={{ 
+                borderRadius: 25,
+                padding:10}}
+                id='ingredient'></textarea>
         <Button onClick={handleFormSubmitIngredient} color="primary" variant="contained" hfre="#add-ingredient" style={{
+                backgroundColor: "steelblue",
                 position: 'relative',
-                right: 120,
-                top: 25,
+                right: 130,
+                top: 30
           }} >Add </Button>
+          <div style={{
+            position: 'relative',
+            top: 35
+          }}>
+          <h4 style={{position: 'relative', left:50, fontFamily:"bold", color:"white"}}> Servings</h4>
+          <textarea onChange={onChange} id='servings'style={{
+                borderRadius: 25,
+                padding:10
+          }}></textarea>
         </div>
         <div style={{
                 position: 'relative',
-                bottom: 130,
-                left: 250,
-                backgroundColor: lightBlue
+                top: 35
           }}>
-          <h4> Instructions</h4>
+          <h4 style={{position: 'relative', left:30, fontFamily:"bold", color:"white"}}> Time to Cook</h4>
+        <textarea onChange={onChange} id='time' style={{
+                borderRadius: 25,
+                padding:10
+          }}></textarea>
+        </div>
+        <div style={{
+                position: 'relative',
+                bottom: 410,
+                left: 300,
+          }}>
+          <h4 style={{position: 'relative',  left:90, fontFamily:"bold", color:"white"}}> Instructions</h4>
           <form id='instructions-test'>
             <textarea id='instructions' style={{
                     width: 300,
-                    height: 300
+                    height: 370,
+                    borderRadius: 25,
+                    padding: 10
             }}></textarea>
             <Button onClick={handleFormSubmitInstructions} color="primary" variant="contained" hfre="#add-ingredient" style={{
+                backgroundColor: "steelblue",
                 position: 'relative',
                 height: 55,
                 width: 175,
-                bottom: 150,
-                left: 100
+                top: 40,
+                right: 235
           }} >Add Instructions</Button>
           </form>
         </div>
-        <div style={{
-                position: 'relative',
-                bottom: 70,
-                left: 250,
-                backgroundColor: lightBlue
-          }}>
-          <h4> Servings</h4>
-        <textarea onChange={onChange} id='servings'style={{
-                borderRadius: 25
-          }}></textarea>
-        </div>
-        <div style={{
-                position: 'relative',
-                bottom: 170,
-                right: 75
-          }}>
-          <h4> Time to Cook</h4>
-        <textarea onChange={onChange} id='time' style={{
-                borderRadius: 25
-          }}></textarea>
-        </div>
-        <Button onClick={handleFormSubmit} color="primary" variant="contained" hfre="#add-ingredient" style={{
+        <Button onClick={handleFormSubmit} variant="contained" hfre="#add-ingredient" style={{
+                borderRadius: 25,
+                fontSize: 20,
+                fontWeight: "bolder",
+                backgroundColor: "lightBlue",
                 position: 'relative',
                 height: 55,
                 width: 175,
-                bottom: 150,
-                left: 100
-          }} >Save Recipie</Button>
-          </div>
+                bottom: 325,
+                left: 275
+          }} >Save Recipe</Button>
+          </Grid>
       </Grid> 
     </Box>
   );
