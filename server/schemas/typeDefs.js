@@ -32,7 +32,7 @@ const typeDefs = `
     getOneUser(userName: String!): User
     getAllUsers: [User]
     getAllRecipes: [Recipe]
-    getUserRecipes(_id: ID!): recipes
+    getUserRecipes(_id: ID!): [Recipe]
   }
 
   type Mutation {
