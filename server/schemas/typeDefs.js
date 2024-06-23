@@ -1,6 +1,4 @@
-const { gql } = require('apollo-server-express');
-
-const typeDefs = gql`
+const typeDefs = `
   type Recipe {
     _id: ID
     instructions: [String]
@@ -34,7 +32,7 @@ const typeDefs = gql`
     getOneUser(userName: String!): User
     getAllUsers: [User]
     getAllRecipes: [Recipe]
-    getUserRecipes(_id: ID!): [Recipe]
+    getUserRecipes(_id: ID!): recipes
   }
 
   type Mutation {

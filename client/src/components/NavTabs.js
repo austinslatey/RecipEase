@@ -40,7 +40,7 @@ function NavTabs({ currentPage, handlePageChange }) {
             onClick={() => handlePageChange('Recipes')}
             className={currentPage === 'Recipes' ? 'nav-link active' : 'nav-link'}
           >
-            Recipies
+            Recipes
           </a>
         </li>
       ) : null}

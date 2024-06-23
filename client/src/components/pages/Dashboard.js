@@ -8,10 +8,10 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import { useQuery } from "@apollo/client";
-import { QUERY_RECIPES } from "../../utils/queries";
+import { QUERY_USER_RECIPES } from "../../utils/queries";
 
 export default function Dashboard() {
-  const { data } = useQuery(QUERY_RECIPES);
+  const { data } = useQuery(QUERY_USER_RECIPES);
   const recipes = data?.recipes || [];
   console.log(recipes);
 

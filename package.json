@@ -11,7 +11,7 @@
     "build": "cd client && npm run build"
   },
   "engines":{
-    "node": "16.x"
+    "node": "20.x"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/austinslatey/RecipEase#readme",
   "dependencies": {
-    "concurrently": "^7.1.0"
+    "concurrently": "^8.2.0"
   }
 }

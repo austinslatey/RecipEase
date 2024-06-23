@@ -1,8 +1,21 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_RECIPES = gql`
+// export const QUERY_RECIPES = gql`
+// query {
+//     recipes {
+//         name 
+//         instructions
+//         tags
+//         servings
+//         time
+//         ingredients
+//     }
+// }
+// `;
+
+export const QUERY_USER_RECIPES = gql`
 query {
-    recipes {
+    getUserRecipes {
         name 
         instructions
         tags
